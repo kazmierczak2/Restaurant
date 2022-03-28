@@ -2,9 +2,10 @@ const mongoose = require('mongoose');
 
 const orderSchema = new mongoose.Schema({
 
-    content:
-        [{
-            nameDish:{ type: String},
+    content: [{
+            nameDish:{
+                type: String
+            },
             name: {
                 type: String
             },
@@ -12,17 +13,16 @@ const orderSchema = new mongoose.Schema({
                 type: String
             }
 
-        }]
-    ,
+    }],
     tableNum: {
         type:String,
         required: true
     },
-    status:
-        {
+    status: {
             type:String,
             required: true
-        }
+    }
 });
+
 const Order = mongoose.model('Order', orderSchema)
 module.exports = Order;
